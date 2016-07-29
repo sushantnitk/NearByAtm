@@ -21,7 +21,7 @@ import com.google.android.gms.location.LocationServices;
 public class FindCurrentLocationTask extends AsyncTask<Void,Void,Location> implements GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
         com.google.android.gms.location.LocationListener{
-    private static final String TAG = "BUS_APP_FIND_LOC_TASK";
+    private static final String TAG = "FIND_LOC_TASK";
 
     public static final long UPDATE_INTERVAL_IN_MILLISECONDS = 10000;
     public static final long FASTEST_UPDATE_INTERVAL_IN_MILLISECONDS = UPDATE_INTERVAL_IN_MILLISECONDS / 2;

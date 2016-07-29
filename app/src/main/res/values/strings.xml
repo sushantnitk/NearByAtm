@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">NearByAtm</string>
+    <string name="app_name">NearBy</string>
+    <string name="improve_location_msg">This app wants to change your device settings:</string>
+    <string name="use_gps">Use GPS for location</string>
+    <string name="use_wifi">Turn on Wi-Fi</string>
+    <string name="getting_location">Getting your location</string>
+
+
+
 </resources>

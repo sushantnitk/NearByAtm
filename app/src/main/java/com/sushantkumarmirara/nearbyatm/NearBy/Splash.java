@@ -1,6 +1,7 @@
 package com.sushantkumarmirara.nearbyatm.NearBy;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
@@ -16,6 +17,7 @@ import com.sushantkumarmirara.nearbyatm.R;
 import com.sushantkumarmirara.nearbyatm.Utils.FetchFromServerUser;
 import com.sushantkumarmirara.nearbyatm.Utils.FindCurrentLocationTask;
 import com.sushantkumarmirara.nearbyatm.Utils.FindCurrentLocationUser;
+import com.sushantkumarmirara.nearbyatm.Utils.LocationSettingDialog;
 
 /**
  * Created by sushantkumar on 18/7/16.
@@ -25,6 +27,7 @@ public class Splash extends Activity implements FetchFromServerUser,FindCurrentL
     LocationManager locationManager;
     ImageView splash;
     String longitude,latitude;
+    ProgressDialog dialog;
     public Splash() {
         super();
     }
@@ -34,13 +37,15 @@ public class Splash extends Activity implements FetchFromServerUser,FindCurrentL
         super.onCreate(savedInstanceState);
         wifiManager = (WifiManager)getSystemService(Context.WIFI_SERVICE);
         locationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
-        RotateAnimation anim = new RotateAnimation(0f, 350f, 15f, 15f);
-        anim.setInterpolator(new LinearInterpolator());
-        anim.setRepeatCount(Animation.INFINITE);
-        anim.setDuration(700);
+        dialog = new ProgressDialog(this);
         splash = (ImageView)findViewById(R.id.splash);
-        splash.startAnimation(anim);
+
         setContentView(R.layout.splash_activity);
+        dialog.setMessage(getString(R.string.getting_location));
+        dialog.setIndeterminate(false);
+        dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        dialog.setCancelable(true);
+        dialog.show();
         new FindCurrentLocationTask(this, this).execute();
 
     }
@@ -53,6 +58,9 @@ public class Splash extends Activity implements FetchFromServerUser,FindCurrentL
     @Override
     protected void onResume() {
         super.onResume();
+        if(!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || !wifiManager.isWifiEnabled()) {
+            LocationSettingDialog.enableLocationSetting(this);
+        }
     }
 
     @Override
@@ -67,7 +75,7 @@ public class Splash extends Activity implements FetchFromServerUser,FindCurrentL
 
     @Override
     public void onFindLocationCompletion(Location L) {
-        splash.setAnimation(null);
+
         longitude = String.valueOf(L.getLongitude());
         latitude = String.valueOf(L.getLatitude());
         Intent intent = new Intent(Splash.this,MainActivity.class);
