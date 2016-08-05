@@ -29,5 +29,7 @@
     <color name="colorPrimaryDark">#0d47a1</color>
     <color name="colorPrimaryBack">#1851a9</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="colorPrimaryLight">#1976d2</color>
+    <color name="viewBg">#f1f5f8</color>
+    <color name="orange">#f05907</color>
+    <color name="album_title">#4c4c4c</color>
 </resources>

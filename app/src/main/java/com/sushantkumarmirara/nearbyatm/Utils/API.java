@@ -60,7 +60,7 @@ public class API {
                 .encodedAuthority(Constants.GOOGLE_PLACES_URL)
                 .appendQueryParameter("location",latitude + "," + longitude)
                 .appendQueryParameter("radius",String.valueOf(Constants.SEARCH_RADIUS))
-                .appendQueryParameter("type",Constants.ATM)
+                .appendQueryParameter("type",Constants.BUS_STOP)
                 .appendQueryParameter("key",Constants.PLACES_API_KEY);
         Log.d("API For ATM :",builder.build().toString());
         return builder.build().toString();

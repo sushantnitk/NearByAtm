@@ -11,7 +11,7 @@ public class Constants {
     public static final String HOSPITALS = "hospital";
     public static final String SCHOOL = "school";
     public static final String RESTAURANT = "restaurant";
-    public static final String BUS_STOP = "busstop";
+    public static final String BUS_STOP = "bus_stop";
 
     public static final String GOOGLE_PLACES_URL = "maps.googleapis.com/maps/api/place/nearbysearch/json";
     public static final int SEARCH_RADIUS = 1000;
