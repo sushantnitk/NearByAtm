@@ -5,15 +5,11 @@ package com.sushantkumarmirara.nearbyatm.NearBy;
  */
 public class Places {
     private String name;
-    private int thumbnail;
+    private int icon;
     private int position;
-    public Places(){}
-
-    public Places(String name,int thumbnail,int position){
-        this.name=name;
-        this.thumbnail = thumbnail;
-        this.position = position;
-    }
+    private boolean openNow;
+    private String vicinity;
+    private Double rating;
 
     public String getName() {
         return name;
@@ -23,19 +19,43 @@ public class Places {
         this.name = name;
     }
 
-    public int getThumbnail() {
-        return thumbnail;
-    }
-
-    public void setThumbnail(int thumbnail) {
-        this.thumbnail = thumbnail;
-    }
-
     public int getPosition() {
         return position;
     }
 
     public void setPosition(int position) {
         this.position = position;
+    }
+
+    public boolean isOpenNow() {
+        return openNow;
+    }
+
+    public void setOpenNow(boolean openNow) {
+        this.openNow = openNow;
+    }
+
+    public int getIcon() {
+        return icon;
+    }
+
+    public void setIcon(int icon) {
+        this.icon = icon;
+    }
+
+    public String getVicinity() {
+        return vicinity;
+    }
+
+    public void setVicinity(String vicinity) {
+        this.vicinity = vicinity;
+    }
+
+    public Double getRating() {
+        return rating;
+    }
+
+    public void setRating(Double rating) {
+        this.rating = rating;
     }
 }
