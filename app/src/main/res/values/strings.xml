@@ -4,6 +4,11 @@
     <string name="use_gps">Use GPS for location</string>
     <string name="use_wifi">Turn on Wi-Fi</string>
     <string name="getting_location">Getting your location</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_add_favourite">Add to Favourites</string>
+    <string name="action_play_next">Play Next</string>
+    <string name="backdrop_title">PlACES NEAR YOU</string>
+    <string name="backdrop_subtitle">The One Touch Solution</string>
 
 
 
