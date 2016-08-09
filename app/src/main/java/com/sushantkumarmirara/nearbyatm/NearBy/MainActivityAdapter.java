@@ -56,7 +56,7 @@ public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapte
     public void onBindViewHolder(ViewHolder holder, final int position) {
         final Places place = placeList.get(position);
         holder.title.setText(place.getName());
-        Glide.with(c).load(place.getThumbnail()).into(holder.place);
+        Glide.with(c).load(place.getPlaces()).into(holder.place);
         holder.itemView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {

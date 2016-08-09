@@ -1,15 +1,20 @@
 package com.sushantkumarmirara.nearbyatm.NearBy;
 
+import java.util.List;
+
 /**
  * Created by Pandey on 06-08-2016.
  */
 public class Places {
     private String name;
-    private int icon;
     private int position;
-    private boolean openNow;
-    private String vicinity;
-    private Double rating;
+    private int places;
+
+    public Places(String name,int places,int position){
+        this.name = name;
+        this.position= position;
+        this.places = places;
+    }
 
     public String getName() {
         return name;
@@ -27,35 +32,11 @@ public class Places {
         this.position = position;
     }
 
-    public boolean isOpenNow() {
-        return openNow;
+    public int getPlaces() {
+        return places;
     }
 
-    public void setOpenNow(boolean openNow) {
-        this.openNow = openNow;
-    }
-
-    public int getIcon() {
-        return icon;
-    }
-
-    public void setIcon(int icon) {
-        this.icon = icon;
-    }
-
-    public String getVicinity() {
-        return vicinity;
-    }
-
-    public void setVicinity(String vicinity) {
-        this.vicinity = vicinity;
-    }
-
-    public Double getRating() {
-        return rating;
-    }
-
-    public void setRating(Double rating) {
-        this.rating = rating;
+    public void setPlaces(int places) {
+        this.places = places;
     }
 }
